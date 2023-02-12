@@ -1,0 +1,89 @@
+body{
+    overflow-y: hidden; /* remove barra de rolamento horizontal */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(0, 32, 139), lightblue);
+}
+h1{
+    height: 500px;
+}
+
+#tela{
+    width: 600px;
+    height: 350px;
+    background-image: url("Images/BackgroundGif.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid black;
+    position: relative;
+    overflow: hidden;
+}
+.comecar{
+    width: 150px;
+    line-height: 50px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 75px);
+}
+.boneco{
+    width: 50px;
+    height: 50px;
+    background-image: url("Images/gifs-do-sonic-correndo-32.gif");
+    transform: scaleX(-1);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+}
+.boneco.pulando{
+    animation: bonecoPulando ease-in-out 1 500ms;
+}
+.parede{
+    width: 80px;
+    height: 50px;
+    background-image: url("Images/Robotnik.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    position: absolute;
+    left: 100%;
+    bottom: 20px;
+}
+
+.parede.andando{
+    animation: paredeAndando linear infinite 0.9s;
+}
+
+.pontos{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+@keyframes paredeAndando {
+    from{}
+    to{left: -50px;}
+}
+@keyframes bonecoPulando {
+    0%{}
+    50%{
+        bottom: 100px;
+    }
+    100%{
+        bottom: 20px;
+    }
+}
